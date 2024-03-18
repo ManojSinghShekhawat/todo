@@ -1,0 +1,143 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(185, 241, 201);
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	background-color: white !important;
+	border-radius: 15px;
+	margin: 10% auto 0 auto;
+	width: 60%;
+}
+
+.header h1 {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+}
+
+.header h1 img {
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+	background-color: white;
+}
+
+.input {
+	margin: 0 5px;
+	height: 35px;
+	background-color: rgb(163, 205, 231);
+	border-radius: 30px;
+}
+
+form {
+	display: flex;
+	justify-content: space-between;
+}
+
+form input {
+	width: 100%;
+	height: 2.2rem;
+	padding: 7px;
+	border: none;
+	border-radius: 30px;
+	background-color: rgb(163, 205, 231);
+	/* border: 1px solid red; */
+}
+input:focus {
+	outline: none;
+}
+
+.input button {
+	background-color: rgb(64, 180, 193);
+	border-radius: 30px;
+	border: none;
+	padding: 0 30px;
+}
+
+#listContainer li {
+	list-style: none;
+	cursor: pointer;
+	position: relative;
+	font-size: 17px;
+	user-select: none;
+	padding: 16px 8px 12px 50px;
+}
+
+#listContainer li::before {
+	content: "";
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-image: url(images/unchecked.png);
+	background-size: cover;
+	background-position: center;
+	top: 12px;
+	left: 8px;
+}
+
+#listContainer li {
+	display: flex;
+	justify-content: space-between;
+}
+
+.task form button {
+	font-size: 20px;
+	width: 35px;
+	height: 35px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	margin: 1rem 1rem 0 0;
+}
+
+.task form button:hover {
+	background-color: antiquewhite;
+}
+
+#listContainer li.checked {
+	text-decoration: line-through;
+}
+#listContainer li.checked::before {
+	background-image: url(images/checked.png);
+}
+
+.task {
+	display: flex;
+	justify-content: space-between;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.menu-list {
+	display: flex;
+	list-style: none;
+}
+
+.menu-list li {
+	padding: 0 15px;
+}
+
+.menu-list li a {
+	text-decoration: none;
+	color: black;
+}
+
+.menu-list li a:hover {
+	color: rgba(0, 0, 0, 0.7);
+}
