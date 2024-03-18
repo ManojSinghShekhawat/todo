@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV != "production") {
+	require("dotenv").config();
+}
+
 const mongoose = require("mongoose");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -14,12 +18,13 @@ const taskRouter = require("./routes/tasks.js");
 const usersRouter = require("./routes/users.js");
 const flash = require("connect-flash");
 
-const dbUrl = "mongodb://127.0.0.1:27017/todolist";
+const dbUrl = process.env.MONGO_URL;
+console.log(process.env.SECRET);
 
 const store = MongoStore.create({
 	mongoUrl: dbUrl,
 	crypto: {
-		secret: "mysecret",
+		secret: process.env.SECRET,
 	},
 	touchAfter: 24 * 3600,
 });
@@ -30,7 +35,7 @@ store.on("error", () => {
 
 const sessionOptions = {
 	store,
-	secret: "mysecret",
+	secret: process.env.SECRET,
 	saveUninitialized: true,
 	resave: false,
 	cookie: {
