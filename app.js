@@ -19,7 +19,6 @@ const usersRouter = require("./routes/users.js");
 const flash = require("connect-flash");
 
 const dbUrl = process.env.MONGO_URL;
-console.log(process.env.SECRET);
 
 const store = MongoStore.create({
 	mongoUrl: dbUrl,
